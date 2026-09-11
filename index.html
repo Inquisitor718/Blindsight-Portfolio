@@ -1,10 +1,17 @@
+```html
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Portfolio</title>
+
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -17,7 +24,9 @@
     }
 
     /* ─── BACKGROUND IMAGE LAYER ─────────────────────────────── */
+
     /* The image stretches to full width, height is natural (scrollable) */
+
     #bg-image {
       display: block;
       width: 100%;
@@ -27,37 +36,52 @@
     }
 
     /* ─── OVERLAY LAYER ──────────────────────────────────────── */
+
     /* Sits on top of the image, same dimensions, absolutely positioned */
+
     #overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      /* height is set by JS to match image height */
+
+      /* Height is set by JS to match image height */
+
       z-index: 1;
-      pointer-events: none; /* lets clicks pass through to nothing by default */
+      pointer-events: none;
     }
 
     /* Wrapper so overlay + image scroll together */
+
     #page {
       position: relative;
       width: 100%;
     }
 
     /* ─── EMBED BLOCKS ───────────────────────────────────────── */
+
     .embed-block {
       position: absolute;
       pointer-events: all;
     }
 
-    /* itch.io iframe */
-    .itchio-embed iframe,
+    /* ─── ITCH.IO GAME ───────────────────────────────────────── */
+
     .itchio-embed {
       border: none;
       display: block;
+      overflow: hidden;
     }
 
-    /* video embed (YouTube / local) */
+    .itchio-embed iframe {
+      border: none;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ─── VIDEO EMBEDS ───────────────────────────────────────── */
+
     .video-embed iframe,
     .video-embed video {
       border: none;
@@ -70,12 +94,13 @@
       overflow: hidden;
     }
 
-    /* ─── EDIT HINT (remove before publishing) ───────────────── */
+    /* ─── EDIT HINT ──────────────────────────────────────────── */
+
     #edit-hint {
       position: fixed;
       bottom: 16px;
       right: 16px;
-      background: rgba(0,0,0,0.75);
+      background: rgba(0, 0, 0, 0.75);
       color: #fff;
       font-family: monospace;
       font-size: 12px;
@@ -85,112 +110,122 @@
       line-height: 1.6;
       max-width: 300px;
     }
-    #edit-hint strong { color: #f0c040; }
+
+    #edit-hint strong {
+      color: #f0c040;
+    }
+
   </style>
+
 </head>
+
 <body>
 
 <div id="page">
 
   <!-- ① BACKGROUND IMAGE — replace src with your Figma export -->
-  <img id="bg-image"
-       src="Frame 1.png"
-       alt="Portfolio Background" />
 
-  <!-- ② OVERLAY — embeds go inside here, positioned by % from top -->
+  <img
+    id="bg-image"
+    src="Frame 1.png"
+    alt="Portfolio Background"
+  />
+
+
+  <!-- ② OVERLAY — embeds go inside here -->
+
   <div id="overlay">
 
+
     <!-- ══════════════════════════════════════════════
-         ITCH.IO EMBED
-         • top: how far from the top of the image (in %)
-         • left / width: horizontal position & size (in %)
-         • Paste your itch.io iframe src below
+         ITCH.IO GAME
+         • top: vertical position
+         • left: horizontal position
+         • width: game width
+         • aspect-ratio: game proportions
     ═══════════════════════════════════════════════ -->
-    <div class="embed-block itchio-embed" style="
-      top: 50%;          /* ← adjust vertical position */
-      left: 50%;         /* ← adjust horizontal position */
-      transform: translateX(-50%);
-      width: 42%;        /* ← adjust width */
-    ">
+
+    <div
+      class="embed-block itchio-embed"
+      style="
+        top: 96%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        aspect-ratio: 16 / 9;
+      "
+    >
+
       <iframe
-        src="https://itch.io/embed/4995117"
+        src="game/index.html"
         width="100%"
-        height="167"
-        frameborder="0">
-        <a href="https://bleu-green.itch.io/blindsight">Your Game on itch.io</a>
-      </iframe>
-    </div>
-
-
-    <!-- ══════════════════════════════════════════════
-         VIDEO EMBED #1  (YouTube)
-         Replace VIDEO_ID with your YouTube video ID
-    ═══════════════════════════════════════════════ -->
-    <div class="embed-block video-embed" style="
-      top: 55%;          /* ← adjust vertical position */
-      left: 8%;          /* ← adjust horizontal position */
-      width: 38%;        /* ← adjust width */
-      aspect-ratio: 16/9;
-    ">
-      <iframe
-        src="https://www.youtube.com/embed/VIDEO_ID_1"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        height="100%"
+        frameborder="0"
         allowfullscreen>
       </iframe>
+
     </div>
 
 
-    <!-- ══════════════════════════════════════════════
-         VIDEO EMBED #2  (YouTube)
-         Duplicate this block for more videos
-    ═══════════════════════════════════════════════ -->
-    <div class="embed-block video-embed" style="
-      top: 55%;
-      left: 54%;
-      width: 38%;
-      aspect-ratio: 16/9;
-    ">
-      <iframe
-        src="https://www.youtube.com/embed/VIDEO_ID_2"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
-
+    
 
     <!-- ══════════════════════════════════════════════
-         LOCAL VIDEO EMBED  (uncomment to use)
+         LOCAL VIDEO EMBED
+         Uncomment to use
     ═══════════════════════════════════════════════ -->
+
     <!--
-    <div class="embed-block video-embed" style="
-      top: 75%;
-      left: 25%;
-      width: 50%;
-      aspect-ratio: 16/9;
-    ">
+
+    <div
+      class="embed-block video-embed"
+      style="
+        top: 75%;
+        left: 25%;
+        width: 50%;
+        aspect-ratio: 16 / 9;
+      "
+    >
+
       <video controls>
         <source src="your-video.mp4" type="video/mp4" />
       </video>
+
     </div>
+
     -->
 
-  </div><!-- /overlay -->
-</div><!-- /page -->
+  </div>
+  <!-- /overlay -->
+
+</div>
+<!-- /page -->
 
 
-<!-- EDIT HINT — delete this block when you're done tweaking -->
+<!-- ══════════════════════════════════════════════
+     EDIT HINT — delete this block when finished
+═══════════════════════════════════════════════ -->
+
 <div id="edit-hint">
+
   <strong>How to customise:</strong><br>
-  1. --
-  2. Replace itch.io game ID / link<br>
-  3. --
+
+  1. Replace <code>Frame 1.png</code> with your background image<br>
+
+  2. Replace the itch.io game ID / link<br>
+
+  3. Replace YouTube VIDEO_ID_1 / VIDEO_ID_2<br>
+
   4. Adjust <code>top / left / width %</code> values<br>
+
   5. Delete this hint block
+
 </div>
 
 
 <script>
-  // Makes overlay height always match image height (handles resizing too)
+
+  /* Makes overlay height always match image height */
+
   const img = document.getElementById('bg-image');
   const overlay = document.getElementById('overlay');
 
@@ -199,11 +234,19 @@
   }
 
   img.addEventListener('load', syncHeight);
+
   window.addEventListener('resize', syncHeight);
 
-  // In case image is already cached
-  if (img.complete) syncHeight();
+  /* In case image is already cached */
+
+  if (img.complete) {
+    syncHeight();
+  }
+
 </script>
 
+
 </body>
+
 </html>
+```
