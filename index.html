@@ -65,6 +65,24 @@
       pointer-events: all;
     }
 
+    /* ─── GIFS ───────────────────────────────────────── */
+
+    .gif-embed {
+      position: absolute;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .gif-embed img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+
+
+
+
     /* ─── ITCH.IO GAME ───────────────────────────────────────── */
 
     .itchio-embed {
@@ -79,6 +97,75 @@
       width: 100%;
       height: 100%;
     }
+
+
+    /* ─── GAME SOUND BUTTON ───────────────────────── */
+
+#game-sound-button {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  width: 46px;
+  height: 46px;
+
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  z-index: 20;
+
+  pointer-events: all;
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+
+#game-sound-button:hover {
+  transform: scale(1.1);
+  background: rgba(30, 30, 30, 0.95);
+}
+
+#game-sound-button svg {
+  width: 23px;
+  height: 23px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Small text underneath the icon */
+#game-sound-label {
+  position: absolute;
+
+  top: 50px;
+  right: 0;
+
+  white-space: nowrap;
+
+  font-family: monospace;
+  font-size: 10px;
+
+  color: white;
+
+  background: rgba(0, 0, 0, 0.7);
+
+  padding: 3px 6px;
+  border-radius: 3px;
+
+  pointer-events: none;
+}
 
     /* ─── VIDEO EMBEDS ───────────────────────────────────────── */
 
@@ -134,8 +221,205 @@
 
   <!-- ② OVERLAY — embeds go inside here -->
 
-  <div id="overlay">
+ <!-- ══════════════════════════════════════════════
+     GIFS
+     Positions are CENTER points of the green markers
+     ═══════════════════════════════════════════════ -->
 
+    <!-- GIF 1 -->
+    <div
+      class="gif-embed"
+      style="
+        top: 29.39%;
+        left: 26.11%;
+        width: 25%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <img src="gifs/Lightning_bs.gif" alt="">
+    </div>
+
+
+    <!-- GIF 2 -->
+    <div
+      class="gif-embed"
+      style="
+        top: 37.40%;
+        left: 72.61%;
+        width: 25%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <img src="gifs/clone_bs.gif" alt="">
+    </div>
+
+
+    <!-- GIF 3 -->
+    <div
+      class="gif-embed"
+      style="
+        top: 48.07%;
+        left: 49.68%;
+        width: 60%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <img src="gifs/environment_demo_bs.gif" alt="">
+    </div>
+
+
+    <!-- GIF 4 -->
+    <div
+      class="gif-embed"
+      style="
+        top: 51.84%;
+        left: 42.41%;
+        width: 20%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <img src="gifs/lantern_bs.gif" alt="">
+    </div>
+
+
+    <!-- GIF 5 -->
+    <div
+      class="gif-embed"
+      style="
+        top: 54.08%;
+        left: 11.15%;
+        width: 18%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <img src="gifs/corner_attack_bs.gif" alt="">
+    </div>
+
+
+    <!-- GIF 6 -->
+    <div
+      class="gif-embed"
+      style="
+        top: 54.08%;
+        left: 73.89%;
+        width: 17%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <img src="gifs/detect_clone_bs.gif" alt="">
+    </div>
+
+
+    <!-- GIF 7 -->
+    <div
+      class="gif-embed"
+      style="
+        top: 55.57%;
+        left: 43.36%;
+        width: 20%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <img src="gifs/clone_hunt_bs.gif" alt="">
+    </div>
+
+
+    <!-- GIF 8 -->
+    <div
+      class="gif-embed"
+      style="
+        top: 60.45%;
+        left: 43.22%;
+        width: 18%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <img src="gifs/clone_bs.gif" alt="">
+    </div>
+
+
+    <!-- GIF 9 -->
+    <div
+      class="gif-embed"
+      style="
+        top: 62.30%;
+        left: 12.33%;
+        width: 15%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <img src="gifs/attack_run_bs.gif" alt="">
+    </div>
+
+
+    <!-- GIF 10 -->
+    <div
+      class="gif-embed"
+      style="
+        top: 62.30%;
+        left: 74.75%;
+        width: 16%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <img src="gifs/break_lantern_bs.gif" alt="">
+    </div>
+
+
+    <!-- GIF 11 -->
+    <div
+      class="gif-embed"
+      style="
+        top: 64.40%;
+        left: 45.22%;
+        width: 15%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <img src="gifs/guerilla_bs.gif" alt="">
+    </div>
+
+
+    <!-- GIF 12 -->
+    <div
+      class="gif-embed"
+      style="
+        top: 88.79%;
+        left: 23.25%;
+        width: 15%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <img src="gifs/lantern_drop_bs.gif" alt="">
+    </div>
+
+
+    <!-- GIF 13 -->
+    <div
+      class="gif-embed"
+      style="
+        top: 88.79%;
+        left: 50.64%;
+        width: 22%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <img src="gifs/meat_shield_bs.gif" alt="">
+    </div>
+
+
+    <!-- GIF 14 -->
+    <div
+      class="gif-embed"
+      style="
+        top: 88.79%;
+        left: 77.39%;
+        width: 22%;
+        transform: translate(-50%, -50%);
+      "
+    >
+      <img src="gifs/fake_clone.gif" alt="">
+    </div>
 
     <!-- ══════════════════════════════════════════════
          ITCH.IO GAME
@@ -145,24 +429,52 @@
          • aspect-ratio: game proportions
     ═══════════════════════════════════════════════ -->
 
-    <div
-      class="embed-block itchio-embed"
-      style="
-        top: 96%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80%;
-        aspect-ratio: 16 / 9;
-      "
+   <div 
+      class="embed-block itchio-embed" 
+      style=" 
+        top: 96%; 
+        left: 50%; 
+        transform: translateX(-50%); 
+        width: 80%; 
+        aspect-ratio: 16 / 9; 
+      " 
     >
 
-      <iframe
-        src="game/index.html"
-        width="100%"
-        height="100%"
+      <iframe 
+        id="game-frame"
+        src="game/index.html" 
+        width="100%" 
+        height="100%" 
         frameborder="0"
+        tabindex="-1"
+        loading="eager"
         allowfullscreen>
       </iframe>
+
+
+      <!-- SOUND BUTTON -->
+
+      <button id="game-sound-button" aria-label="Turn sound on">
+
+        <!-- Speaker OFF icon -->
+        <svg id="sound-icon-off" viewBox="0 0 24 24">
+          <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+          <line x1="23" y1="9" x2="17" y2="15"/>
+          <line x1="17" y1="9" x2="23" y2="15"/>
+        </svg>
+
+        <!-- Speaker ON icon -->
+        <svg id="sound-icon-on" viewBox="0 0 24 24" style="display:none;">
+          <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+          <path d="M15.5 8.5a5 5 0 0 1 0 7"/>
+          <path d="M18.5 5.5a9 9 0 0 1 0 13"/>
+        </svg>
+
+        <span id="game-sound-label">
+          SOUND OFF
+        </span>
+
+      </button>
 
     </div>
 
@@ -205,7 +517,9 @@
 
 <script>
 
-  /* Makes overlay height always match image height */
+  /* ═══════════════════════════════════════════════
+     OVERLAY HEIGHT
+  ═══════════════════════════════════════════════ */
 
   const img = document.getElementById('bg-image');
   const overlay = document.getElementById('overlay');
@@ -215,14 +529,132 @@
   }
 
   img.addEventListener('load', syncHeight);
-
   window.addEventListener('resize', syncHeight);
-
-  /* In case image is already cached */
 
   if (img.complete) {
     syncHeight();
   }
+
+
+  /* ═══════════════════════════════════════════════
+   STOP GAME FROM AUTO-SCROLLING
+  ══════════════════════════════════════════════ */
+
+  const gameFrame = document.getElementById('game-frame');
+
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  // Remember where the user was before the game loads
+  const pageScrollBeforeGame = window.scrollY;
+
+
+  // Restore the page position
+  function restorePageScroll() {
+    window.scrollTo({
+      top: pageScrollBeforeGame,
+      left: 0,
+      behavior: 'instant'
+    });
+  }
+
+
+  // When the game loads
+  gameFrame.addEventListener('load', function () {
+
+    gameFrame.blur();
+
+    // Restore several times because Godot can
+    // focus its canvas slightly after iframe load.
+    restorePageScroll();
+
+    setTimeout(restorePageScroll, 50);
+    setTimeout(restorePageScroll, 150);
+    setTimeout(restorePageScroll, 300);
+    setTimeout(restorePageScroll, 600);
+    setTimeout(restorePageScroll, 1000);
+
+  });
+
+
+  /* ═══════════════════════════════════════════════
+     GAME SOUND BUTTON
+  ═══════════════════════════════════════════════ */
+
+  const soundButton =
+    document.getElementById('game-sound-button');
+
+  const soundOffIcon =
+    document.getElementById('sound-icon-off');
+
+  const soundOnIcon =
+    document.getElementById('sound-icon-on');
+
+  const soundLabel =
+    document.getElementById('game-sound-label');
+
+
+  // IMPORTANT:
+// Sound starts OFF.
+  let gameSoundOn = false;
+
+
+  function updateSoundButton() {
+
+    if (gameSoundOn) {
+
+      soundOffIcon.style.display = 'none';
+      soundOnIcon.style.display = 'block';
+
+      soundLabel.textContent = 'SOUND ON';
+
+      soundButton.setAttribute(
+        'aria-label',
+        'Turn sound off'
+      );
+
+    } else {
+
+      soundOffIcon.style.display = 'block';
+      soundOnIcon.style.display = 'none';
+
+      soundLabel.textContent = 'SOUND OFF';
+
+      soundButton.setAttribute(
+        'aria-label',
+        'Turn sound on'
+      );
+    }
+  }
+
+
+  soundButton.addEventListener('click', function(e) {
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    gameSoundOn = !gameSoundOn;
+
+    updateSoundButton();
+
+
+    // Tell the Godot game what the new state is.
+
+    gameFrame.contentWindow.postMessage(
+      {
+        type: 'portfolio_sound',
+        enabled: gameSoundOn
+      },
+      window.location.origin
+    );
+
+  });
+
+
+  // Set initial appearance
+  updateSoundButton();
+
 
 </script>
 
